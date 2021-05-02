@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homework</title>
+    <style>
+      h1 {
+        color: orange;
+        text-align: center;
+        font-size: 34px;
+        line-height: 48px;
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 34px;
+        line-height: 48px;
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0px;
+        font-weight: 100;
+      }
+      ul {
+        list-style: none;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+      }
+      li {
+        padding: 40px 0;
+        font-weight: 100;
+        font-size: 18px;
+        font-family: Helvetica, Arial, sans-serif;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      button {
+        background: #1a65d6;
+        color: white;
+        font-size: 15px;
+        margin: 20px auto;
+        display: block;
+        border: 1px solid #1a65d6;
+        border-radius: 30px;
+        padding: 16px 24px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        transition: all 200ms ease-in-out;
+        font-size: 16px;
+        line-height: 22px;
+      }
+      button:hover {
+        color: #1a65d6;
+        background: white;
+        cursor: pointer;
+      }
+      .first:hover {
+        background-color: #fffbef;
+      }
+      .second:hover {
+        background-color: #fffbef;
+      }
+      .third:hover {
+        background-color: #fffbef;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌤<br />
+      Currently 21° in Tokyo
+    </h1>
+    <h2>
+      13° /
+      <strong>23°</strong>
+    </h2>
+
+    <ul>
+      <li class="first">
+        <strong>🌧Tomorrow</strong><br /><br />
+        10° / <strong> 22°</strong>
+      </li>
+      <li class="second">
+        <strong>🌥Saturday</strong><br /><br />
+        15° / <strong>17°</strong>
+      </li>
+      <li class="third">
+        <strong>☀️Sunday</strong><br /><br />
+        25° / <strong>28°</strong>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <p>Coded by Yan Cao</p>
+
+    <script>
+      function basic() {
+        let city = prompt("Which city do you live?");
+        let temperature = prompt("What temperature is there?");
+        let heading = document.querySelector("h1");
+
+        if (temperature <= "0°") {
+          heading.innerHTML =
+            "☹️<br />" + " Currently " + temperature + " in " + city;
+        } else {
+          if (temperature >= "20°") {
+            heading.innerHTML =
+              "☀️<br />" + " Currently " + temperature + " in " + city;
+          } else {
+            heading.innerHTML =
+              "🌥<br />" + " Currently " + temperature + " in " + city;
+          }
+        }
+      }
+
+      let cityName = document.querySelector("button");
+      cityName.addEventListener("click", basic);
+    </script>
+  </body>
+</html>
